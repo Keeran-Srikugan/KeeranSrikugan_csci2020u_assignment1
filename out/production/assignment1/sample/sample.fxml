@@ -1,44 +1,35 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
-
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.skin.SplitPaneSkin.Content?>
 <GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="5" vgap="5" prefWidth="700" prefHeight="700">
+          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10" prefWidth="1500" prefHeight="600">
 
-    <ScrollPane fx:id="scrollview" hbarPolicy="NEVER" prefHeight="600"  >
-        <content>
-            <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="700" prefHeight="700" >
-                <columns>
-                    <TableColumn fx:id="File Name" text="File Name"  prefWidth="350">
-                    </TableColumn>
-                    <TableColumn fx:id="Class" text="Actual Class" prefWidth="100">
-                    </TableColumn>
-                    <TableColumn fx:id="Probability" text="Probability of Spam" prefWidth="250">
-                    </TableColumn>
-
-                </columns>
-            </TableView>
-        </content>
+    <ScrollPane fx:id="scrollview" hbarPolicy="NEVER" prefHeight="500"><content>
+        <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="1500" prefHeight="600"><columns>
+            <TableColumn fx:id="FileColumn" text="File Name"  prefWidth="400"></TableColumn>
+            <TableColumn fx:id="Class" text="Actual Class" prefWidth="100"></TableColumn>
+            <TableColumn fx:id="Probability" text="Probability of Spam" prefWidth="400"></TableColumn>
+        </columns>
+        </TableView>
+    </content>
     </ScrollPane>
 
-    <HBox spacing="10" alignment="bottom_left" GridPane.columnIndex="0"
-          GridPane.rowIndex="4">
-        <Label text="Accuracy:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField fx:id="Accuracy" promptText="Accuracy"
-                   prefWidth="90"/>
-    </HBox>
-    <HBox spacing="10" alignment="bottom_left" GridPane.columnIndex="0"
-          GridPane.rowIndex="5">
-        <Label text="Precision:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <TextField fx:id="Precision" promptText="Precision"
-                   prefWidth="90"/>
+
+    <HBox spacing="15" alignment="bottom_left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Label text="Accuracy" GridPane.columnIndex="0" GridPane.rowIndex="4" /> <TextField fx:id="Accuracy" promptText="Accuracy"  prefWidth="120"/></HBox>
+
+    <HBox spacing="15" alignment="bottom_left" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <Label text="Precision:" GridPane.columnIndex="0" GridPane.rowIndex="5" /> <TextField fx:id="Precision" promptText="Precision" prefWidth="120"/>
     </HBox>
 
 </GridPane>
