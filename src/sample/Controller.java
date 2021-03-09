@@ -34,6 +34,11 @@ public class Controller {
     private TableColumn<TestFile, String> classColumn;
     private TableColumn<TestFile, String>  probabilityColumn;
 
+    Double truePos = 0.0;
+    Double trueNeg = 0.0;
+    Double falsePos = 0.0;
+
+
     @FXML
     private TableView myTable;
 
@@ -57,17 +62,12 @@ public class Controller {
 
     //This section is the testing section
 //-------------------------------------------------------------------------------------
-    public void testing(Map<String, Integer> hFreq, Map<String, Integer> sFreq, int hamF, int spamF){
+    public void importValsFortesting(Map<String, Integer> hFreq, Map<String, Integer> sFreq, int hamF, int spamF){
         //This just sets all the frquency values into this file
         hamFrequency.get(hFreq);
         spamFrequency.get(sFreq);
         hamFiles = hamF;
         spamFiles = spamF;
-
-        //THis runs all the functions
-        probabilityWH();
-        probabilityWS();
-        probabilitySW();
     }
 
 
@@ -98,22 +98,22 @@ public class Controller {
         }
     }
 
-    //Calculate SF
+    //This si the class to grab the true positivesm, false positives and true negatives
     public void probabilitySF(){
-        
+
+
     }
 
-
-    //This si the class to grab the true positivesm, false positives and true negatives
-    public List<TestFile> testing(File mainDirectory){return null;}
 
     public double accuracy_cal(){
         //This is how you calculate the accuracy:
-        return 0.0;
+        Double accuracyCalc = (truePos + trueNeg)/ (spamFiles+hamFiles);
+        return accuracyCalc;
     }
 
     public double precision_cal(){
-        return 0.0;
+        Double precisionCalc = truePos /(truePos + falsePos);
+        return precisionCalc;
     }
 
 }

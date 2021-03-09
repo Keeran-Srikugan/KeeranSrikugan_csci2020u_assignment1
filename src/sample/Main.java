@@ -79,7 +79,14 @@ public class Main extends Application {
         }
         //This checks if gthe main direcotry is not empty and runs the test function in the controller file
         if (mainDirectory != null) {
-            controller.testing(hamFrequency,spamFrequency,hamFiles,spamFiles);
+            //The first function brings the values into the controller class so they can be used there
+            controller.importValsFortesting(hamFrequency,spamFrequency,hamFiles,spamFiles);
+            controller.probabilityWH();
+            controller.probabilityWS();
+            controller.probabilitySW();
+            controller.probabilitySF();
+            controller.accuracy_cal();
+            controller.precision_cal();
         }
 
     }
@@ -174,8 +181,6 @@ public class Main extends Application {
             spamFrequency.put(token, previous+1);
         }
     }
-
-
     public static void main(String[] args) {
         launch(args);
     }

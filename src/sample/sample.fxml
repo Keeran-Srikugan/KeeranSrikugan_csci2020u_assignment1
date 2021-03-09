@@ -23,8 +23,6 @@
         </TableView>
     </content>
     </ScrollPane>
-
-
     <HBox spacing="15" alignment="bottom_left" GridPane.columnIndex="0" GridPane.rowIndex="2">
         <Label text="Accuracy" GridPane.columnIndex="0" GridPane.rowIndex="4" /> <TextField fx:id="Accuracy" promptText="Accuracy"  prefWidth="120"/></HBox>
 

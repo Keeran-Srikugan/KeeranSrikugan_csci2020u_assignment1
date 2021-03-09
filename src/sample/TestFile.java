@@ -39,7 +39,6 @@ public class TestFile {
     }
 
     public void setActualClass(String value) {
-        this.actualClass =
-                value;
+        this.actualClass = value;
     }
 }
