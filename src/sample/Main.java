@@ -81,6 +81,8 @@ public class Main extends Application {
         if (mainDirectory != null) {
             //The first function brings the values into the controller class so they can be used there
             controller.importValsFortesting(hamFrequency,spamFrequency,hamFiles,spamFiles);
+
+            //Below runs all the probability functions along with the accuracy and precision calculator
             controller.probabilityWH();
             controller.probabilityWS();
             controller.probabilitySW();
